@@ -1,5 +1,5 @@
 // Context để quản lý Dark/Light mode
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
 
 // Type cho theme
 type Theme = 'dark' | 'light'

@@ -1,5 +1,5 @@
 // Context để quản lý ngôn ngữ EN/VI
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, type ReactNode } from 'react'
 
 // Type cho language
 type Language = 'en' | 'vi'

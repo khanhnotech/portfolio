@@ -2,7 +2,6 @@
 // Import Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
-  faUser, 
   faSeedling, 
   faRocket, 
   faStar,
