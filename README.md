@@ -127,8 +127,8 @@ MIT License - Tự do sử dụng cho dự án cá nhân và thương mại.
 
 ## 💬 Liên hệ
 
-- Email: your.email@example.com
-- GitHub: @yourusername
+- Email: lamkhanh270070@gmail.com
+- GitHub: @khanhnotech
 
 ---
 
