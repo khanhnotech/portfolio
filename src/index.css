@@ -1,0 +1,193 @@
+/* Tailwind CSS Directives - PostCSS sẽ thay thế các dòng này bằng CSS thực tế */
+
+/* @tailwind base: 
+   - Reset CSS mặc định của browser (normalize)
+   - Các styles cơ bản cho HTML elements
+   - Ví dụ: margin, padding, font-family mặc định
+*/
+@tailwind base;
+
+/* @tailwind components:
+   - Các class components có thể tái sử dụng
+   - Ví dụ: .btn, .card, .container
+   - Bạn có thể tự định nghĩa thêm bằng @layer components
+*/
+@tailwind components;
+
+/* @tailwind utilities:
+   - Tất cả các utility classes của Tailwind
+   - Ví dụ: .flex, .bg-blue-500, .text-center, .p-4
+   - Đây là phần lớn nhất và quan trọng nhất
+*/
+@tailwind utilities;
+
+/* Custom styles cho smooth transitions và animations */
+@layer base {
+  /* Set default font family */
+  body {
+    @apply font-sans antialiased;
+  }
+
+  /* Smooth transition cho theme changes */
+  * {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Scrollbar styling cho dark mode */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-orange-500;
+  }
+}
+
+/* Custom Animations */
+@layer utilities {
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Slide in from right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Scale in animation */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Float animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Pulse glow animation */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(249, 115, 22, 0.8);
+    }
+  }
+
+  /* Gradient animation */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Animation classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulseGlow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  /* Delay classes for staggered animations */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+}
