@@ -1,13 +1,14 @@
 // Component Contact - Trang liên hệ với dark theme
 import { useState } from 'react'
 // Import Font Awesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faEnvelope, 
   faPhone, 
   faMapMarkerAlt,
   faPaperPlane,
-  faCheckCircle
+  faCheckCircle,
+  faSpinner,
+  faExclamationTriangle
 } from '@fortawesome/free-solid-svg-icons'
 import { 
   faGithub, 
@@ -15,10 +16,13 @@ import {
   faYoutube,
   faTiktok
 } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // Import useLanguage hook
 import { useLanguage } from '../contexts/LanguageContext'
 // Import social links
 import socialLinks from '../config/socialLinks'
+// Import API function
+import { sendContactEmail } from '../api/sendEmail'
 
 function Contact() {
   // Lấy function translate từ context
@@ -32,6 +36,9 @@ function Contact() {
 
   // State để hiển thị thông báo sau khi submit
   const [showSuccess, setShowSuccess] = useState(false)
+  const [showError, setShowError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   // Hàm xử lý khi input thay đổi
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,12 +49,43 @@ function Contact() {
   }
 
   // Hàm xử lý khi submit form
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form data:', formData)
-    setShowSuccess(true)
-    setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setShowSuccess(false), 3000)
+    
+    // Validate form
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setMessage('Vui lòng điền đầy đủ thông tin!')
+      setShowError(true)
+      setTimeout(() => setShowError(false), 3000)
+      return
+    }
+
+    setIsLoading(true)
+    setShowSuccess(false)
+    setShowError(false)
+
+    try {
+      // Gửi email
+      const result = await sendContactEmail(formData)
+      
+      if (result.success) {
+        setMessage(result.message)
+        setShowSuccess(true)
+        setFormData({ name: '', email: '', message: '' })
+        setTimeout(() => setShowSuccess(false), 5000)
+      } else {
+        setMessage(result.message)
+        setShowError(true)
+        setTimeout(() => setShowError(false), 5000)
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setMessage('Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau.')
+      setShowError(true)
+      setTimeout(() => setShowError(false), 5000)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   // Thông tin liên hệ
@@ -106,7 +144,15 @@ function Contact() {
             {showSuccess && (
               <div className="bg-green-500/20 border border-green-500 text-green-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-2">
                 <FontAwesomeIcon icon={faCheckCircle} />
-                {t('contact.success')}
+                {message}
+              </div>
+            )}
+
+            {/* Error message */}
+            {showError && (
+              <div className="bg-red-500/20 border border-red-500 text-red-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-2">
+                <FontAwesomeIcon icon={faExclamationTriangle} />
+                {message}
               </div>
             )}
 
@@ -163,10 +209,20 @@ function Contact() {
               {/* Submit button */}
               <button
                 type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                disabled={isLoading}
+                className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
               >
-                <FontAwesomeIcon icon={faPaperPlane} />
-                {t('contact.send')}
+                {isLoading ? (
+                  <>
+                    <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                    Đang gửi...
+                  </>
+                ) : (
+                  <>
+                    <FontAwesomeIcon icon={faPaperPlane} />
+                    {t('contact.send')}
+                  </>
+                )}
               </button>
             </form>
           </div>

@@ -1,6 +1,8 @@
-// Component App - Component chính của ứng dụng Portfolio
+// Component App - Component chính của ứng dụng Portfolio với React Router
+// Import React Router
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 // Import hook useState từ React để quản lý state
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,56 +21,87 @@ import About from './components/About'
 import Contact from './components/Contact'
 import DateTimeWidget from './components/DateTimeWidget'
 
-// Component App - Quản lý toàn bộ ứng dụng
-function App() {
-  // State để lưu tab hiện tại đang được chọn
-  // Mặc định là 'home' - trang chủ
-  const [activeTab, setActiveTab] = useState('home')
-  // Lấy function translate từ context
+// Component để handle navigation
+function AppContent() {
+  const location = useLocation()
+  const navigate = useNavigate()
   const { t } = useLanguage()
-
-  // Hàm render nội dung dựa vào tab được chọn
-  // Switch case để quyết định component nào sẽ hiển thị
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return <Home />
-      case 'technologies':
-        return <Technologies />
-      case 'projects':
-        return <Projects />
-      case 'about':
-        return <About />
-      case 'contact':
-        return <Contact />
+  
+  // Xác định activeTab từ URL
+  const getActiveTabFromPath = (pathname: string) => {
+    switch (pathname) {
+      case '/':
+        return 'home'
+      case '/technologies':
+        return 'technologies'
+      case '/projects':
+        return 'projects'
+      case '/about':
+        return 'about'
+      case '/contact':
+        return 'contact'
       default:
-        return <Home />
+        return 'home'
+    }
+  }
+
+  const [activeTab, setActiveTab] = useState(getActiveTabFromPath(location.pathname))
+
+  // Update activeTab khi URL thay đổi
+  useEffect(() => {
+    setActiveTab(getActiveTabFromPath(location.pathname))
+  }, [location.pathname])
+
+  // Hàm handle tab change với navigation
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab)
+    // Navigate đến URL tương ứng
+    switch (tab) {
+      case 'home':
+        navigate('/')
+        break
+      case 'technologies':
+        navigate('/technologies')
+        break
+      case 'projects':
+        navigate('/projects')
+        break
+      case 'about':
+        navigate('/about')
+        break
+      case 'contact':
+        navigate('/contact')
+        break
+      default:
+        navigate('/')
     }
   }
 
   return (
-    // Container chính - background thay đổi theo theme
-    // dark:bg-gray-900 = dark mode màu xám đen
-    // bg-gray-50 = light mode màu xám sáng
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    // Container chính - background xanh dương đậm cố định
+    <div className="min-h-screen bg-blue-950 transition-colors duration-300">
       {/* Header component - thanh điều hướng */}
-      {/* Truyền props: activeTab (tab hiện tại) và onTabChange (hàm đổi tab) */}
       <Header 
         activeTab={activeTab} 
-        onTabChange={setActiveTab}  // Khi user click tab, gọi setActiveTab để cập nhật state
+        onTabChange={handleTabChange}
       />
       
-      {/* Main content - nội dung chính */}
-      {/* renderContent() sẽ trả về component tương ứng với tab được chọn */}
+      {/* Main content - Routes */}
       <main>
-        {renderContent()}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/technologies" element={<Technologies />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
 
       {/* Date Time Widget - Fixed position */}
       <DateTimeWidget />
 
-      {/* Footer - chân trang responsive với theme */}
-      <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 py-8 text-center transition-colors duration-300">
+      {/* Footer - chân trang xanh dương đậm */}
+      <footer className="bg-gradient-to-b from-gray-900 via-gray-900 border-t border-gray py-8 text-center transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="flex justify-center gap-4 mb-4">
             {/* Social links với Font Awesome và links thật */}
@@ -78,10 +111,10 @@ function App() {
             <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors text-2xl" title="Facebook">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black dark:hover:text-white transition-colors text-2xl" title="TikTok">
+            <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-2xl" title="TikTok">
               <FontAwesomeIcon icon={faTiktok} />
             </a>
-            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl" title="GitHub">
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-2xl" title="GitHub">
               <FontAwesomeIcon icon={faGithub} />
             </a>
           </div>
@@ -94,6 +127,15 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+// Component App - Quản lý toàn bộ ứng dụng với Router
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   )
 }
 

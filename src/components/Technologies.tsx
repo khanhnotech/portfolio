@@ -32,20 +32,33 @@ function Technologies() {
   // Dữ liệu các công nghệ đã học với Font Awesome icons
   const technologies: Technology[] = [
     {
+      id: 'html-css-js',
+      name: 'HTML, CSS, JavaScript',
+      icon: 'js',
+      color: 'from-yellow-500 to-orange-500',
+      bgColor: 'bg-gradient-to-br from-yellow-500/10 to-orange-500/10',
+      skills: [
+        { name: 'HTML5 Semantic', level: 90 },
+        { name: 'CSS3 & Flexbox', level: 85 },
+        { name: 'JavaScript ES6+', level: 80 },
+        { name: 'Responsive Design', level: 85 },
+        { name: 'DOM Manipulation', level: 75 },
+        { name: 'CSS Animations', level: 70 },
+      ]
+    },
+    {
       id: 'react',
       name: 'React',
-      icon: 'react', // Font Awesome icon name
+      icon: 'react',
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-gradient-to-br from-blue-500/10 to-cyan-500/10',
       skills: [
         { name: 'JSX', level: 85 },
         { name: 'Components', level: 90 },
-        { name: 'Props', level: 88 },
-        { name: 'State', level: 85 },
+        { name: 'Props & State', level: 88 },
         { name: 'Hooks (useState, useEffect)', level: 80 },
-        { name: 'DOM Manipulation', level: 75 },
-        { name: 'Event Handling', level: 85 },
-        { name: 'Conditional Rendering', level: 90 },
+        { name: 'Context API', level: 75 },
+        { name: 'React Router', level: 70 },
       ]
     },
     {
@@ -64,6 +77,19 @@ function Technologies() {
       ]
     },
     {
+      id: 'nextjs',
+      name: 'Next.js',
+      icon: 'react',
+      color: 'from-gray-700 to-gray-900',
+      bgColor: 'bg-gradient-to-br from-gray-700/10 to-gray-900/10',
+      skills: [
+        { name: 'SSR & SSG', level: 40 },
+        { name: 'App Router', level: 35 },
+        { name: 'API Routes', level: 40 },
+        { name: 'Image Optimization', level: 45 },
+      ]
+    },
+    {
       id: 'typescript',
       name: 'TypeScript',
       icon: 'js',
@@ -77,17 +103,65 @@ function Technologies() {
       ]
     },
     {
-      id: 'tailwind',
-      name: 'Tailwind CSS',
+      id: 'csharp',
+      name: 'C# Unity 2D',
       icon: 'code',
-      color: 'from-cyan-500 to-blue-500',
-      bgColor: 'bg-gradient-to-br from-cyan-500/10 to-blue-500/10',
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'bg-gradient-to-br from-purple-500/10 to-pink-500/10',
       skills: [
-        { name: 'Utility Classes', level: 85 },
-        { name: 'Responsive Design', level: 80 },
-        { name: 'Flexbox & Grid', level: 85 },
-        { name: 'Custom Configuration', level: 65 },
+        { name: 'C# Syntax', level: 75 },
+        { name: 'Unity Engine', level: 70 },
+        { name: '2D Game Development', level: 65 },
+        { name: 'Sprites & Animation', level: 70 },
+        { name: 'Physics 2D', level: 60 },
+        { name: 'UI System', level: 65 },
       ]
+    },
+  ]
+
+  // Dữ liệu dịch vụ
+  const services = [
+    {
+      id: 'advertising',
+      title: t('tech.service.advertising.title'),
+      description: t('tech.service.advertising.description'),
+      icon: 'code',
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      id: 'news',
+      title: t('tech.service.news.title'),
+      description: t('tech.service.news.description'),
+      icon: 'code',
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'ecommerce',
+      title: t('tech.service.ecommerce.title'),
+      description: t('tech.service.ecommerce.description'),
+      icon: 'code',
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      id: 'mobile',
+      title: t('tech.service.mobile.title'),
+      description: t('tech.service.mobile.description'),
+      icon: 'code',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'game2d',
+      title: t('tech.service.game2d.title'),
+      description: t('tech.service.game2d.description'),
+      icon: 'code',
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      id: 'webgame',
+      title: t('tech.service.webgame.title'),
+      description: t('tech.service.webgame.description'),
+      icon: 'code',
+      color: 'from-cyan-500 to-blue-500'
     },
   ]
 
@@ -155,7 +229,7 @@ function Technologies() {
       </div>
 
       {/* Grid các công nghệ với dark theme */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {/* Map qua từng công nghệ để render card */}
         {technologies.map((tech) => {
           // Kiểm tra xem tech này có đang được chọn không
@@ -224,9 +298,44 @@ function Technologies() {
         })}
       </div>
 
+      {/* Phần Dịch vụ */}
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-display font-bold text-white mb-4 tracking-tight">
+            {t('tech.services')}
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            {t('tech.servicesSubtitle')}
+          </p>
+        </div>
+
+        {/* Grid dịch vụ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className="bg-gray-800 border border-gray-700 rounded-xl p-6 hover:border-orange-500 hover:scale-105 transition-all duration-300 animate-fadeIn"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="text-center">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center`}>
+                  <FontAwesomeIcon icon={faCode} className="text-white text-2xl" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Quote cuối */}
       <div className="text-center mt-16">
-        <p className="text-gray-400 text-lg italic max-w-2xl mx-auto">
+        <p className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-400 text-lg italic max-w-2xl mx-auto">
           "{t('tech.quote')}" 🇻🇳
         </p>
       </div>

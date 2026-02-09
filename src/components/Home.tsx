@@ -32,7 +32,7 @@ function Home() {
       </div>
 
       {/* Hero Section - Layout 2 cột với container - padding thấp hơn */}
-      <div className="container mx-auto px-4  lg:py-4 relative z-10">
+      <div className="container bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900 mx-auto px-4  lg:py-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-120px)]">
           {/* Cột trái - Text content với animations */}
           <div className="text-left space-y-6 animate-slideInLeft">
@@ -49,13 +49,8 @@ function Home() {
 
             {/* Title chính - Professional design với multiple effects */}
             <div className="relative animate-fadeIn animation-delay-400">
-              {/* Shadow layer cho depth */}
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-tight tracking-tight absolute inset-0 blur-sm opacity-30 text-orange-500">
-                {t('home.title')}
-              </h2>
-              
               {/* Main title với gradient và effects */}
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-tight tracking-tight relative">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-tight tracking-tight relative">
                 <span className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 bg-clip-text text-transparent animate-gradient drop-shadow-[0_0_30px_rgba(249,115,22,0.3)]">
                   {t('home.title')}
                 </span>
@@ -119,9 +114,6 @@ function Home() {
 
             {/* CTA Buttons với icons và animations - Font display */}
             <div className="flex flex-wrap gap-4 pt-6">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 shadow-lg shadow-orange-500/50 hover:shadow-orange-500/80 animate-pulseGlow group">
-                <span className="group-hover:inline-block group-hover:animate-bounce-slow">{t('home.hireMe')}</span>
-              </button>
               <button className="bg-transparent border-2 border-gray-600 hover:border-orange-500 hover:bg-orange-500/10 text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 flex items-center gap-2 group">
                 <FontAwesomeIcon icon={faDownload} className="group-hover:animate-bounce-slow" />
                 {t('home.downloadCV')}
@@ -153,13 +145,13 @@ function Home() {
             {/* Container cho avatar */}
             <div className="relative">
 
-              {/* Ảnh đại diện chính - layer trên cùng, dịch lên trên một chút */}
-              <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[450px] lg:h-[550px] z-20 group -mt-8 md:-mt-12 lg:-mt-16">
+              {/* Ảnh đại diện chính - layer trên cùng, di chuyển xuống dưới trên desktop */}
+              <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[550px] lg:h-[650px] xl:w-[600px] xl:h-[700px] z-20 group -mt-8 md:-mt-12 lg:mt-12">
                 {/* Avatar với hover effect - object-contain để giữ nguyên tỷ lệ và background trong suốt */}
                 <img 
-                  src="/images/avatar-lamphuongkhanh.png" 
+                  src="/images/lamphuongkhanh-nobg.png" 
                   alt="Lam Phuong Khanh - Developer Portfolio" 
-                  className="w-full h-full object-contain object-top drop-shadow-2xl dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)] transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_30px_rgba(249,115,22,0.5)]"
+                  className="w-full h-full object-contain object-top drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_30px_rgba(249,115,22,0.5)]"
                 />
                 
                 {/* Decorative elements - Hiệu ứng trang trí với animation */}

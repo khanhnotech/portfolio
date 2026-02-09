@@ -22,20 +22,20 @@ function About() {
   const timeline = [
     {
       year: '2023',
-      title: 'Bắt đầu học lập trình',
-      description: 'Khám phá thế giới lập trình web với HTML, CSS, JavaScript',
+      title: t('about.timeline.2023.title'),
+      description: t('about.timeline.2023.description'),
       icon: faSeedling
     },
     {
       year: '2024',
-      title: 'Học React & Node.js',
-      description: 'Chuyên sâu vào React, TypeScript và backend với Node.js',
+      title: t('about.timeline.2024.title'),
+      description: t('about.timeline.2024.description'),
       icon: faRocket
     },
     {
       year: '2025',
-      title: 'Xây dựng dự án thực tế',
-      description: 'Phát triển các ứng dụng web hoàn chỉnh và portfolio',
+      title: t('about.timeline.2025.title'),
+      description: t('about.timeline.2025.description'),
       icon: faStar
     },
   ]
@@ -70,7 +70,7 @@ function About() {
             <div className="flex-shrink-0">
               <div className="w-40 h-40 rounded-full shadow-xl border-4 border-orange-500 overflow-hidden">
                 <img 
-                  src="/images/avatar-lamphuongkhanh.png" 
+                  src="/images/lamphuongkhanh-nobg.png" 
                   alt="Lam Phuong Khanh" 
                   className="w-full h-full object-cover"
                 />

@@ -24,7 +24,7 @@ const translations = {
     
     // Home
     'home.greeting': 'Hi I am',
-    'home.title': 'FULLSTACK Developer',
+    'home.title': 'Creative Web Developer',
     'home.description': 'Passionate about programming and learning new technologies every day. Specializing in React, Node.js and modern web technologies.',
     'home.hireMe': 'Hire Me',
     'home.downloadCV': 'Download CV',
@@ -33,13 +33,27 @@ const translations = {
     'home.happyClients': 'Happy Clients',
     
     // Technologies
-    'tech.title': 'My Services',
-    'tech.subtitle': 'Technologies and skills I have learned and mastered',
-    'tech.technologies': 'Technologies',
+    'tech.title': 'Programming Languages',
+    'tech.subtitle': 'Programming languages and technologies I have learned and mastered',
+    'tech.technologies': 'Languages',
     'tech.skillsLearned': 'Skills Learned',
     'tech.averageLevel': 'Average Level',
     'tech.skillsMastered': 'skills mastered',
     'tech.quote': 'Never stop learning, grow every day',
+    'tech.services': 'My Services',
+    'tech.servicesSubtitle': 'Types of projects and applications I can develop',
+    'tech.service.advertising.title': 'Advertising Website & Tools',
+    'tech.service.advertising.description': 'Develop advertising websites, landing pages and online tools',
+    'tech.service.news.title': 'News Website',
+    'tech.service.news.description': 'Build news websites with CMS, content management and SEO',
+    'tech.service.ecommerce.title': 'E-commerce Website',
+    'tech.service.ecommerce.description': 'Develop e-commerce websites with shopping cart and payment',
+    'tech.service.mobile.title': 'Mobile App (React Native)',
+    'tech.service.mobile.description': 'Develop cross-platform mobile applications for iOS and Android',
+    'tech.service.game2d.title': '2D Game',
+    'tech.service.game2d.description': 'Create 2D games with Unity, engaging gameplay and beautiful graphics',
+    'tech.service.webgame.title': 'Web Game',
+    'tech.service.webgame.description': 'Develop web games with JavaScript, HTML5 Canvas',
     
     // Projects
     'projects.title': 'My Portfolio',
@@ -53,6 +67,14 @@ const translations = {
     'projects.haveIdea': 'Have a project idea?',
     'projects.workTogether': "Let's work together to bring your vision to life",
     'projects.contactMe': 'Contact Me',
+    'projects.portfolio.title': 'Portfolio Website',
+    'projects.portfolio.description': 'Personal portfolio website with React, TypeScript and Tailwind CSS. Beautiful interface, responsive and user-friendly.',
+    'projects.rental.title': 'House Rental',
+    'projects.rental.description': 'House rental website with search features, filter by price and area. User-friendly and easy to use interface.',
+    'projects.game.title': 'Game Web Google Map',
+    'projects.game.description': 'Interactive web game using Google Maps API. Unique gaming experience combined with real maps.',
+    'projects.taxi.title': 'Taxi Go Cong',
+    'projects.taxi.description': 'Taxi booking application for Go Cong area with real-time tracking, fare calculation and driver management system.',
     
     // About
     'about.title': 'About Me',
@@ -63,6 +85,12 @@ const translations = {
     'about.journey': 'My Journey',
     'about.interests': 'Interests & Hobbies',
     'about.quote': 'Every line of code is a step forward, every bug is a lesson',
+    'about.timeline.2023.title': 'Started Learning Programming',
+    'about.timeline.2023.description': 'Discovered the world of web programming with HTML, CSS, JavaScript',
+    'about.timeline.2024.title': 'Learning React & Node.js',
+    'about.timeline.2024.description': 'Deep dive into React, TypeScript and backend with Node.js',
+    'about.timeline.2025.title': 'Building Real Projects',
+    'about.timeline.2025.description': 'Developing complete web applications and portfolio',
     
     // Contact
     'contact.title': 'Contact Me',
@@ -94,7 +122,7 @@ const translations = {
     
     // Home
     'home.greeting': 'Xin chào',
-    'home.title': 'Lập Trình Viên FULLSTACK',
+    'home.title': 'Nhà Phát Triển Web Sáng Tạo',
     'home.description': 'Đam mê lập trình và học hỏi công nghệ mới mỗi ngày. Chuyên về React, Node.js và các công nghệ web hiện đại.',
     'home.hireMe': 'Thuê tôi',
     'home.downloadCV': 'Tải CV',
@@ -103,13 +131,27 @@ const translations = {
     'home.happyClients': 'Khách hàng hài lòng',
     
     // Technologies
-    'tech.title': 'Dịch Vụ Của Tôi',
-    'tech.subtitle': 'Các công nghệ và kỹ năng tôi đã học và thành thạo',
-    'tech.technologies': 'Công nghệ',
+    'tech.title': 'Ngôn Ngữ Lập Trình',
+    'tech.subtitle': 'Các ngôn ngữ lập trình và công nghệ tôi đã học và thành thạo',
+    'tech.technologies': 'Ngôn ngữ',
     'tech.skillsLearned': 'Kỹ năng đã học',
     'tech.averageLevel': 'Trung bình',
     'tech.skillsMastered': 'kỹ năng thành thạo',
     'tech.quote': 'Học tập không ngừng, phát triển mỗi ngày',
+    'tech.services': 'Dịch Vụ Của Tôi',
+    'tech.servicesSubtitle': 'Các loại dự án và ứng dụng tôi có thể phát triển',
+    'tech.service.advertising.title': 'Website Quảng Cáo & Tools',
+    'tech.service.advertising.description': 'Phát triển website quảng cáo, landing page và các công cụ trực tuyến',
+    'tech.service.news.title': 'Website Tin Tức',
+    'tech.service.news.description': 'Xây dựng website tin tức với CMS, quản lý nội dung và SEO',
+    'tech.service.ecommerce.title': 'Website Bán Hàng',
+    'tech.service.ecommerce.description': 'Phát triển website thương mại điện tử với giỏ hàng và thanh toán',
+    'tech.service.mobile.title': 'App Mobile (React Native)',
+    'tech.service.mobile.description': 'Phát triển ứng dụng di động đa nền tảng iOS và Android',
+    'tech.service.game2d.title': 'Game 2D',
+    'tech.service.game2d.description': 'Tạo game 2D với Unity, gameplay thú vị và đồ họa đẹp mắt',
+    'tech.service.webgame.title': 'Web Game',
+    'tech.service.webgame.description': 'Phát triển game trên web với JavaScript, HTML5 Canvas',
     
     // Projects
     'projects.title': 'Dự Án Của Tôi',
@@ -123,6 +165,14 @@ const translations = {
     'projects.haveIdea': 'Có ý tưởng dự án?',
     'projects.workTogether': 'Hãy cùng nhau biến ý tưởng thành hiện thực',
     'projects.contactMe': 'Liên hệ với tôi',
+    'projects.portfolio.title': 'Portfolio Website',
+    'projects.portfolio.description': 'Website portfolio cá nhân với React, TypeScript và Tailwind CSS. Giao diện đẹp mắt, responsive và dễ sử dụng.',
+    'projects.rental.title': 'Cho Thuê Nhà',
+    'projects.rental.description': 'Website cho thuê nhà với tính năng tìm kiếm, lọc theo giá và khu vực. Giao diện thân thiện và dễ sử dụng.',
+    'projects.game.title': 'Game Web Google Map',
+    'projects.game.description': 'Game web tương tác sử dụng Google Maps API. Trải nghiệm chơi game độc đáo kết hợp với bản đồ thực tế.',
+    'projects.taxi.title': 'Taxi Gò Công',
+    'projects.taxi.description': 'Ứng dụng đặt taxi khu vực Gò Công với tính năng theo dõi thời gian thực, tính cước và quản lý tài xế.',
     
     // About
     'about.title': 'Về Tôi',
@@ -133,6 +183,12 @@ const translations = {
     'about.journey': 'Hành Trình Của Tôi',
     'about.interests': 'Sở Thích & Đam Mê',
     'about.quote': 'Mỗi dòng code là một bước tiến, mỗi bug là một bài học',
+    'about.timeline.2023.title': 'Bắt đầu học lập trình',
+    'about.timeline.2023.description': 'Khám phá thế giới lập trình web với HTML, CSS, JavaScript',
+    'about.timeline.2024.title': 'Học React & Node.js',
+    'about.timeline.2024.description': 'Chuyên sâu vào React, TypeScript và backend với Node.js',
+    'about.timeline.2025.title': 'Xây dựng dự án thực tế',
+    'about.timeline.2025.description': 'Phát triển các ứng dụng web hoàn chỉnh và portfolio',
     
     // Contact
     'contact.title': 'Liên Hệ Với Tôi',

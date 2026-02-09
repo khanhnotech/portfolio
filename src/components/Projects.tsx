@@ -34,35 +34,38 @@ function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Portfolio Website',
-      description: 'Website portfolio cá nhân với React, TypeScript và Tailwind CSS. Giao diện đẹp mắt, responsive và dễ sử dụng.',
+      title: t('projects.portfolio.title'),
+      description: t('projects.portfolio.description'),
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       icon: 'globe',
       status: 'in-progress',
     },
     {
       id: 2,
-      title: 'Todo App',
-      description: 'Ứng dụng quản lý công việc với các tính năng thêm, sửa, xóa và đánh dấu hoàn thành.',
-      technologies: ['React', 'LocalStorage', 'CSS'],
-      icon: 'list',
+      title: t('projects.rental.title'),
+      description: t('projects.rental.description'),
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      icon: 'shop',
       status: 'completed',
+      link: 'https://cho-thue-nha.vercel.app'
     },
     {
       id: 3,
-      title: 'Weather App',
-      description: 'Ứng dụng xem thời tiết sử dụng API, hiển thị thông tin thời tiết theo thành phố.',
-      technologies: ['React', 'API', 'Axios'],
-      icon: 'weather',
+      title: t('projects.game.title'),
+      description: t('projects.game.description'),
+      technologies: ['JavaScript', 'Google Maps API', 'Railway', 'HTML/CSS'],
+      icon: 'globe',
       status: 'completed',
+      link: 'https://gamewebgooglemap-production.up.railway.app/'
     },
     {
       id: 4,
-      title: 'E-commerce Platform',
-      description: 'Nền tảng thương mại điện tử với giỏ hàng, thanh toán và quản lý sản phẩm.',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+      title: t('projects.taxi.title'),
+      description: t('projects.taxi.description'),
+      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
       icon: 'shop',
-      status: 'planned',
+      status: 'completed',
+      link: 'https://taxigocong.xyz/'
     },
   ]
 
@@ -182,10 +185,15 @@ function Projects() {
                     {t('projects.viewDetails')}
                   </button>
                   {project.link && (
-                    <button className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                    >
                       <FontAwesomeIcon icon={faLink} />
                       {t('projects.demo')}
-                    </button>
+                    </a>
                   )}
                 </div>
               </div>

@@ -10,4 +10,8 @@ export default defineConfig({
   plugins: [
     react(), // Plugin React: biên dịch JSX/TSX, hỗ trợ Hot Module Replacement (HMR)
   ],
+  // Chỉ expose các env vars cần thiết cho client
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+  }
 })
