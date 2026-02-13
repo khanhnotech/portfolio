@@ -7,10 +7,18 @@ import { faGithub, faFacebook, faYoutube, faTiktok } from '@fortawesome/free-bra
 import { useLanguage } from '../contexts/LanguageContext'
 // Import social links config
 import socialLinks from '../config/socialLinks'
+// Import useNavigate for routing
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
   // Lấy function translate từ context
   const { t } = useLanguage()
+  const navigate = useNavigate()
+
+  // Hàm điều hướng đến trang CV
+  const handleDownloadCV = () => {
+    navigate('/cv')
+  }
   return (
     // Container chính với background responsive theo theme
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-black relative overflow-hidden transition-colors duration-500">
@@ -114,7 +122,10 @@ function Home() {
 
             {/* CTA Buttons với icons và animations - Font display */}
             <div className="flex flex-wrap gap-4 pt-6">
-              <button className="bg-transparent border-2 border-gray-600 hover:border-orange-500 hover:bg-orange-500/10 text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 flex items-center gap-2 group">
+              <button 
+                onClick={handleDownloadCV}
+                className="bg-transparent border-2 border-gray-600 hover:border-orange-500 hover:bg-orange-500/10 text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-110 flex items-center gap-2 group"
+              >
                 <FontAwesomeIcon icon={faDownload} className="group-hover:animate-bounce-slow" />
                 {t('home.downloadCV')}
               </button>

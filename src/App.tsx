@@ -19,6 +19,7 @@ import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
+import CV from './components/CV'
 import DateTimeWidget from './components/DateTimeWidget'
 
 // Component để handle navigation
@@ -40,6 +41,8 @@ function AppContent() {
         return 'about'
       case '/contact':
         return 'contact'
+      case '/cv':
+        return 'cv'
       default:
         return 'home'
     }
@@ -72,6 +75,9 @@ function AppContent() {
       case 'contact':
         navigate('/contact')
         break
+      case 'cv':
+        navigate('/cv')
+        break
       default:
         navigate('/')
     }
@@ -94,6 +100,7 @@ function AppContent() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cv" element={<CV />} />
         </Routes>
       </main>
 

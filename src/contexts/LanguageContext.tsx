@@ -20,6 +20,7 @@ const translations = {
     'nav.about': 'About me',
     'nav.portfolio': 'Portfolio',
     'nav.contact': 'Contact me',
+    'nav.cv': 'CV',
     'nav.hireMe': 'Hire Me',
     
     // Home
@@ -75,6 +76,8 @@ const translations = {
     'projects.game.description': 'Interactive web game using Google Maps API. Unique gaming experience combined with real maps.',
     'projects.taxi.title': 'Taxi Go Cong',
     'projects.taxi.description': 'Taxi booking application for Go Cong area with real-time tracking, fare calculation and driver management system.',
+    'projects.tools.title': 'Utility Tools Website',
+    'projects.tools.description': 'Collection of useful online tools and utilities for developers and users. Features various tools for productivity and convenience.',
     
     // About
     'about.title': 'About Me',
@@ -109,7 +112,19 @@ const translations = {
     
     // Footer
     'footer.madeWith': 'Made with Lam Phuong Khanh ❤️ in Vietnam',
-    'footer.rights': '© 2024 Portfolio. All rights reserved.',
+    'footer.rights': '© 2026 Portfolio. All rights reserved.',
+    
+    // CV
+    'cv.title': 'Curriculum Vitae',
+    'cv.download': 'Download PDF',
+    'cv.print': 'Print CV',
+    'cv.personalInfo': 'Personal Information',
+    'cv.skills': 'Technical Skills',
+    'cv.experience': 'Experience',
+    'cv.projects': 'Projects',
+    'cv.services': 'Services Offered',
+    'cv.socialMedia': 'Social Media',
+    'cv.born': 'Born',
   },
   vi: {
     // Header
@@ -118,6 +133,7 @@ const translations = {
     'nav.about': 'Về tôi',
     'nav.portfolio': 'Dự án',
     'nav.contact': 'Liên hệ',
+    'nav.cv': 'CV',
     'nav.hireMe': 'Thuê tôi',
     
     // Home
@@ -173,6 +189,8 @@ const translations = {
     'projects.game.description': 'Game web tương tác sử dụng Google Maps API. Trải nghiệm chơi game độc đáo kết hợp với bản đồ thực tế.',
     'projects.taxi.title': 'Taxi Gò Công',
     'projects.taxi.description': 'Ứng dụng đặt taxi khu vực Gò Công với tính năng theo dõi thời gian thực, tính cước và quản lý tài xế.',
+    'projects.tools.title': 'Website Công Cụ Tiện Ích',
+    'projects.tools.description': 'Tổng hợp các công cụ trực tuyến hữu ích cho developers và người dùng. Cung cấp nhiều công cụ để tăng năng suất và tiện lợi.',
     
     // About
     'about.title': 'Về Tôi',
@@ -207,7 +225,19 @@ const translations = {
     
     // Footer
     'footer.madeWith': 'Được tạo bởi Lâm Phương Khánh ❤️ tại Việt Nam',
-    'footer.rights': '© 2024 Portfolio. Bảo lưu mọi quyền.',
+    'footer.rights': '© 2026 Portfolio. Bảo lưu mọi quyền.',
+    
+    // CV
+    'cv.title': 'Sơ Yếu Lý Lịch',
+    'cv.download': 'Tải PDF',
+    'cv.print': 'In CV',
+    'cv.personalInfo': 'Thông Tin Cá Nhân',
+    'cv.skills': 'Kỹ Năng Kỹ Thuật',
+    'cv.experience': 'Kinh Nghiệm',
+    'cv.projects': 'Dự Án',
+    'cv.services': 'Dịch Vụ Cung Cấp',
+    'cv.socialMedia': 'Mạng Xã Hội',
+    'cv.born': 'Sinh năm',
   }
 }
 

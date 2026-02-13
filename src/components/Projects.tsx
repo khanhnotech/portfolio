@@ -67,6 +67,15 @@ function Projects() {
       status: 'completed',
       link: 'https://taxigocong.xyz/'
     },
+    {
+      id: 5,
+      title: t('projects.tools.title'),
+      description: t('projects.tools.description'),
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+      icon: 'list',
+      status: 'completed',
+      link: 'https://www.cong-cu-tien-ich.io.vn/'
+    },
   ]
 
   // Helper function để lấy icon

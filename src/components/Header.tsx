@@ -27,6 +27,7 @@ function Header({ activeTab, onTabChange }: HeaderProps) {
     { id: 'about', labelKey: 'nav.about' },
     { id: 'projects', labelKey: 'nav.portfolio' },
     { id: 'contact', labelKey: 'nav.contact' },
+    { id: 'cv', labelKey: 'nav.cv' },
   ]
 
   return (

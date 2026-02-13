@@ -191,3 +191,55 @@
     animation-delay: 0.8s;
   }
 }
+
+/* Print styles for CV */
+@media print {
+  /* Hide elements that shouldn't be printed */
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Ensure proper page breaks */
+  .print-page-break {
+    page-break-before: always;
+  }
+  
+  /* Optimize colors for print */
+  .print-friendly {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  /* Remove shadows and effects for print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Ensure proper margins */
+  @page {
+    margin: 0.5in;
+  }
+  
+  /* Make sure text is readable */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Hide background images and colors */
+  body * {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Keep some colors for important elements */
+  .print-color {
+    color: #16a34a !important; /* Green color for headings */
+  }
+}
