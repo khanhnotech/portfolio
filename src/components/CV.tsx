@@ -98,6 +98,18 @@ function CV() {
     { name: 'REST API', level: 75 }
   ]
 
+  const aiSkills = [
+    { name: 'ChatGPT', level: 88, description: 'Problem solving & code review' },
+    { name: 'Kiro AI', level: 85, description: 'IDE integration & development' },
+    { name: 'Prompt Engineering', level: 85, description: 'Optimizing AI interactions' },
+    { name: 'Claude AI', level: 82, description: 'Code analysis & documentation' },
+    { name: 'Google Gemini', level: 80, description: 'Multi-modal AI assistance' },
+    { name: 'AI-Assisted UI/UX', level: 80, description: 'Design with AI tools' },
+    { name: 'V0.dev', level: 78, description: 'AI component generation' },
+    { name: 'Cursor AI', level: 75, description: 'AI-powered code editor' },
+    { name: 'GitHub Copilot', level: 60, description: 'Code completion & generation' }
+  ]
+
   const projects = [
     {
       name: t('projects.portfolio.title'),
@@ -133,6 +145,13 @@ function CV() {
       technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       status: t('projects.completed'),
       link: 'https://www.cong-cu-tien-ich.io.vn/'
+    },
+    {
+      name: 'AI-Enhanced Development Workflow',
+      description: 'Integrated AI tools into development process for code generation, debugging, and UI design',
+      technologies: ['GitHub Copilot', 'ChatGPT', 'Kiro AI', 'Cursor AI'],
+      status: t('projects.completed'),
+      link: null
     }
   ]
 
@@ -252,6 +271,15 @@ function CV() {
                   <p className="text-gray-600 leading-relaxed">
                     {t('about.intro1')}
                   </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t('about.intro2')}
+                  </p>
+                  <div className="mt-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <p className="text-gray-700 text-sm font-medium mb-1">🤖 {t('cv.aiExpertise')}</p>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      {t('cv.aiDescription')}
+                    </p>
+                  </div>
                 </div>
               </section>
 
@@ -259,7 +287,7 @@ function CV() {
               <section>
                 <h3 className="text-lg font-bold text-green-600 mb-3 flex items-center gap-2">
                   <FontAwesomeIcon icon={faCode} />
-                  Skills
+                  {t('cv.skills')}
                 </h3>
                 <div className="space-y-3">
                   {skills.map((skill, index) => (
@@ -274,6 +302,31 @@ function CV() {
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* AI Skills */}
+              <section>
+                <h3 className="text-lg font-bold text-green-600 mb-3 flex items-center gap-2">
+                  <FontAwesomeIcon icon={faStar} />
+                  {t('cv.aiSkills')}
+                </h3>
+                <div className="space-y-3">
+                  {aiSkills.map((skill, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-sm font-medium">{skill.name}</span>
+                        <span className="text-sm text-gray-500">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 mb-1">
+                        <div
+                          className="bg-blue-600 h-2 rounded-full"
+                          style={{ width: `${skill.level}%` }}
+                        />
+                      </div>
+                      <p className="text-xs text-gray-600">{skill.description}</p>
                     </div>
                   ))}
                 </div>
